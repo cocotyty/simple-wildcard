@@ -10,6 +10,7 @@ var testTable = []struct {
 	{"host01.idc01", []string{"host01.idc01"}, []string{"host03.idc01"}},
 	{"host[01:30].idc01", []string{"host29.idc01", "host03.idc01"}, []string{"host00.idc01", "host00.idc00"}},
 	{"host[01:30].*", []string{"host29.idc01", "host03.idc02"}, []string{"host00.idc01", "host99.idc02"}},
+	{"host[01:130].*", []string{"host129.idc01", "host03.idc02"}, []string{"host00.idc01", "host199.idc02"}},
 	{"host*", []string{"host29.idc01", "host03.idc02"}, []string{"not"}},
 }
 

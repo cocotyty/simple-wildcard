@@ -49,7 +49,7 @@ func (r Range) match(str []byte, next []matcher) (offset int, ok bool) {
 	}
 	maxWidth := r.maxWidth
 	if len(str) < maxWidth {
-		maxWidth = len(str) - 1
+		maxWidth = len(str)
 	}
 	for i := minWidth; i <= maxWidth; i++ {
 		num, err := strconv.Atoi(string(str[:i]))
